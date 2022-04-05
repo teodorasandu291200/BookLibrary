@@ -34,9 +34,8 @@ contract BookLibrary is Owner {
     mapping(uint => Book) public books;
     mapping(uint => History) public bookHistory;
 
-//function _addBooks(uint _bookId, uint _copies) internal  
 
-    function _addBooks(uint _bookId, uint _copies) public {
+    function _addBooks(uint _bookId, uint _copies) internal {
         Book memory book =  Book(_bookId, _copies, true);
         books[_bookId] = book;
         bookCount = bookCount + _copies;
