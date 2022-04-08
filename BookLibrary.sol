@@ -41,6 +41,7 @@ contract BookLibrary is Owner {
             uint _bookId = randMod(_name);
             listOfBookIds.push(_bookId);
             nameToId[_name] = _bookId;
+            isPresent[_name] = true;
         }
         Book storage book = books[nameToId[_name]];
         book.name = _name;
@@ -48,7 +49,6 @@ contract BookLibrary is Owner {
         bookCount = bookCount + _copies;
         totalBookCount = totalBookCount + _copies;
         book.isAvailable = true;
-        isPresent[_name] = true;
 
         emit NewBook(_name, nameToId[_name], _copies,"You have added books,owner");
 
