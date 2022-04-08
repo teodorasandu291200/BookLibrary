@@ -28,7 +28,6 @@ contract BookLibrary is Owner {
     return uint(keccak256(abi.encodePacked(_name))) ;
   }
 
-    uint public bookId;
 
     uint[] public listOfBookIds;
     mapping(string => uint) public nameToId;
